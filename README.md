@@ -6,7 +6,7 @@
   * Dev responsibility to add these in.
 * Only active during development (transpiles into JavaScript)
 * Doesnt provide any performance optimization unlike other languages
-* 
+
 ## S.Grider TS Course Overview
 * 1) Syntax and Features of TS
   * What is an interface?
@@ -17,6 +17,7 @@
 ## Type
 * A type is an easy way to refer to the different props and funcs that a value has.
   * primitive types
+    * any
     * string
     * number
     * boolean
@@ -34,7 +35,7 @@
     * .concat for string, etc.
 
 ## Type Annotation and Type Inference
-* **Annotations**: code we add to tel TS what type of val a var will refer to
+* **Annotations**: code we add to tell TS what type of val a var will refer to
   * Devs tells TS the type
   * When to use:
     * When we declare a variable on one line then initialize it later.
@@ -47,6 +48,9 @@
 let color: string = "rebeccapurple";
 let myNum: number = 42;
 let truth: boolean = true;
+
+//built in objects
+let now: Date = new Date()
 //arrays
 let colors: string[] = ["red", "green", "blue"];
 let myNums: number[] = [1, 2, 3];
@@ -65,7 +69,9 @@ let cartesianPoint: {x: number; y: number, z: number} = {
 const logNumber: (num: number) => void = num => {
   console.log(num);
 };
-const color = "red"; //TS infers the value on a single line; multiple lines have ": any"
+let color = "red"; //TS infers the value on a single line; multiple lines have ": any"
+
+//AVOIDE 'any' AT ALL COSTS
 
 //When to use type annotation
 //1)Functions that return the any type

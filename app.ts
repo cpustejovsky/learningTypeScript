@@ -1,2 +1,10 @@
-const answer = [x => x + "bar", x => x + 2].map(fn => fn("foo"));
-console.log(answer);
+const logNumber: (num: number) => void = (num: number) => {
+  console.log(num);
+};
+
+logNumber(5);
+
+
+const json = '{"x": 10, "y": 20}';
+const coordinates: { x: number; y: number } = JSON.parse(json);
+console.log(coordinates);
