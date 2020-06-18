@@ -114,3 +114,28 @@ const add = (a: number, b: number): number => {
 
 console.log(add(5, 6)); //11
 ```
+
+- `(a: number, b: number): number` is used for arrow functions, named functions, and anonymous functions
+- use `:void` return value to indicate that nothing should be returned (`null` and `undefined` can be returned)
+- use `:never` if you want the function to end early. Like if you're running `throw new Error(message)` and `process.exit(1)`
+- using objects and destructuring with TS
+  ```typescript
+  const weatherToday = {
+    date: new Date(),
+    weather: "sunny",
+  };
+  const logWeather = (forecast: { date: Date; weather: string }): void => {
+    console.log(forecast.date);
+    console.log(forecast.weather);
+  };
+  const logWeatherDestructured = ({
+    date,
+    weather,
+  }: {
+    date: Date;
+    weather: string;
+  }): void => {
+    console.log(date);
+    console.log(weather);
+  };
+  ```
