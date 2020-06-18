@@ -1,49 +1,55 @@
 # TypeScript Notes
 
 ## TS Type System
-* Helps us catch errors during development instead of during production
-* Uses type annotations to analyze our code
-  * Dev responsibility to add these in.
-* Only active during development (transpiles into JavaScript)
-* Doesnt provide any performance optimization unlike other languages
+
+- Helps us catch errors during development instead of during production
+- Uses type annotations to analyze our code
+  - Dev responsibility to add these in.
+- Only active during development (transpiles into JavaScript)
+- Doesnt provide any performance optimization unlike other languages
 
 ## S.Grider TS Course Overview
-* 1) Syntax and Features of TS
-  * What is an interface?
-  * What is the syntax for defining an interface?
-* 2) Design pattersn
-  * How do we use intefraces to write reusable code?
+
+- 1. Syntax and Features of TS
+  - What is an interface?
+  - What is the syntax for defining an interface?
+- 2. Design pattersn
+  - How do we use intefraces to write reusable code?
 
 ## Type
-* A type is an easy way to refer to the different props and funcs that a value has.
-  * primitive types
-    * any
-    * string
-    * number
-    * boolean
-    * void
-    * undefined
-    * null
-    * symbol
-  * object types
-    * object
-    * array
-    * class
-    * function
-    * built-in objects like Date, etc.
-  * a value with all the properties and methods a _____ has
-    * .concat for string, etc.
+
+- A type is an easy way to refer to the different props and funcs that a value has.
+  - primitive types
+    - any
+    - string
+    - number
+    - boolean
+    - void
+    - undefined
+    - null
+    - symbol
+  - object types
+    - object
+    - array
+    - class
+    - function
+    - built-in objects like Date, etc.
+  - a value with all the properties and methods a **\_** has
+    - .concat for string, etc.
 
 ## Type Annotation and Type Inference
-* **Annotations**: code we add to tell TS what type of val a var will refer to
-  * Devs tells TS the type
-  * When to use:
-    * When we declare a variable on one line then initialize it later.
-    * When we want a variable to have a type that can't be inferred.
-    * When a function returns the 'any' type and we need to clarify the value.
-* **Inference:** TS tries to figure out what type of val a var refers to
-  * TS guesses the type
+
+- **Annotations**: code we add to tell TS what type of val a var will refer to
+  - Devs tells TS the type
+  - When to use:
+    - When we declare a variable on one line then initialize it later.
+    - When we want a variable to have a type that can't be inferred.
+    - When a function returns the 'any' type and we need to clarify the value.
+- **Inference:** TS tries to figure out what type of val a var refers to
+  - TS guesses the type
+
 ### Annotations
+
 ```typescript
 let color: string = "rebeccapurple";
 let myNum: number = 42;
@@ -57,7 +63,7 @@ let myNums: number[] = [1, 2, 3];
 let truths: boolean[] = [true, false, true];
 //classes
 class Car {
-  
+
 }
 let car: Car = new Car();
 //object literal
@@ -95,4 +101,16 @@ let numAboveZero: boolean | number = false;
 for (let i = 0; i < nums.length; i++) {
   if (nums[i] > 0) numAboveZero = nums[i];
 }
+```
+
+## Annotations with Functions and Object
+
+```typescript
+//ensures the inputs are numbers
+const add = (a: number, b: number): number => {
+  //ensures the return value exists and is a number. won't allow for void return values that just have side effects
+  return a + b;
+};
+
+console.log(add(5, 6)); //11
 ```
