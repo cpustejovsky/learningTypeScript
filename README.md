@@ -139,3 +139,30 @@ console.log(add(5, 6)); //11
     console.log(weather);
   };
   ```
+  ###Annotations with Objects
+
+* They need to be redundant in type annoation because multiple props
+
+```typescript
+const profile = {
+  name: "alex",
+  age: 20,
+  coords: {
+    lat: 0,
+    long: 15,
+  },
+  setAge(age: number): void {
+    this.age = age;
+  },
+};
+
+const {
+  age,
+  name,
+  coords: { lat, long },
+}: {
+  age: number;
+  name: string;
+  coords: { lat: number; long: number };
+} = profile;
+```
