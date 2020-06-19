@@ -176,6 +176,7 @@ const {
 - use `let mixedArray: (number | string)[];` to mix up arrays, but this is bad practice.
 
 ## Tuples in TypeScript
+
 - Tuples are array-like structures where each element represents a property of a record
 - Instead of `let drink = {color: "brown", carbonated: true, sugarInGrams: 40}`, you'd have `let drink = ["brown", true, 40]`
 - Need to memorize property values
@@ -183,10 +184,12 @@ const {
 - So to enforce order in TS, `const pepsi: [string, boolean, number] = ["brown", true, 35];`
 - Or use a type alias like this `type Drink = [string, boolean, number]`
 - Why use Tuples?
+
   - good for csv files
-  - 
-  
+  -
+
 ## TypeScript Interfaces
+
 - `if(interfaces && classes){return strongResuability}`
 
 ```typescript
@@ -212,7 +215,19 @@ const printVehicle = (vehicle: Vehicle): void => {
   console.log(vehicle.summary());
 };
 
-printVehicle(oldCivic)
+printVehicle(oldCivic);
 ```
 
 - Interfaces have the ability to DRY up code.
+- Interface can act as a gatekeeper for functions. They can make sure an object have the right things necessary to be used by a certain function
+- So we try to make sure to:
+  - have as many functions accept arguments that are typed with interfaces
+  - have objects/classes that can decide to implement a given interface to work with a function
+
+## Classes in TypeScript
+
+### Method Modifiers
+
+- **public**: can be called anywhere at any time
+- **private**: can only be called by other methods in the class
+- **protected**: can be called by other methods in the class or be other methods in child class
