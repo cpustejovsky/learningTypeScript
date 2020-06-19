@@ -1,3 +1,3 @@
 let names: string[]
 
-dates = [new Date(), new Date()]
+let dates = [new Date(), new Date()]

@@ -186,3 +186,33 @@ const {
   - good for csv files
   - 
   
+## TypeScript Interfaces
+- `if(interfaces && classes){return strongResuability}`
+
+```typescript
+interface Vehicle {
+  name: string;
+  year: Date;
+  broken: boolean;
+  summary(): string;
+}
+
+const oldCivic = {
+  name: "civic",
+  year: new Date("10-10-2000"),
+  broken: true,
+  summary() {
+    return `name: ${this.name}\nyear: ${this.year}\nbroken: ${
+      this.broken ? "yes" : "no"
+    }`;
+  },
+};
+
+const printVehicle = (vehicle: Vehicle): void => {
+  console.log(vehicle.summary());
+};
+
+printVehicle(oldCivic)
+```
+
+- Interfaces have the ability to DRY up code.
