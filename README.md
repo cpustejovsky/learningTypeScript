@@ -166,3 +166,23 @@ const {
   coords: { lat: number; long: number };
 } = profile;
 ```
+
+## Arrays in TypeScript
+
+- typescript gets mad if you try and mix and match array element types
+- Format: `let names: string[]`
+- typescript infers elements from array. `name[0]` would be inferred to be a string even if names was just `['Bob', 'Rob', 'Dob']`
+- typescript will KNOW what methods are available to elements in array helpers. That's so cool!
+- use `let mixedArray: (number | string)[];` to mix up arrays, but this is bad practice.
+
+## Tuples in TypeScript
+- Tuples are array-like structures where each element represents a property of a record
+- Instead of `let drink = {color: "brown", carbonated: true, sugarInGrams: 40}`, you'd have `let drink = ["brown", true, 40]`
+- Need to memorize property values
+  - Order is essential as a result
+- So to enforce order in TS, `const pepsi: [string, boolean, number] = ["brown", true, 35];`
+- Or use a type alias like this `type Drink = [string, boolean, number]`
+- Why use Tuples?
+  - good for csv files
+  - 
+  
