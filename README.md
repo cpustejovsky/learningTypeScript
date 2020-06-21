@@ -228,6 +228,9 @@ printVehicle(oldCivic);
 
 ### Method Modifiers
 
-- **public**: can be called anywhere at any time
+- **public**: can be called anywhere at any time (default)
 - **private**: can only be called by other methods in the class
 - **protected**: can be called by other methods in the class or be other methods in child class
+
+### Why use classes?
+* Combined with interfaces, classes can provide strong code reuse
