@@ -27,7 +27,7 @@ const cocaCola = {
 
 const printSummary = (item: Reportable): void => {
   console.log(item.summary());
-};
+}
 
 printSummary(oldCivic);
 printSummary(cocaCola);
