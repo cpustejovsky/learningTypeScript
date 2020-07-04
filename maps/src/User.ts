@@ -10,8 +10,8 @@ export class User {
   constructor() {
     this.name = faker.name.firstName()
     this.location = {
-      lat: Number(faker.address.latitude()),
-      lng: Number(faker.address.longitude()),
+      lat: parseFloat(faker.address.latitude()),
+      lng: parseFloat(faker.address.longitude()),
     };
   }
 }

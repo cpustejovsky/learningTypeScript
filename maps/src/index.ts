@@ -1,7 +1,7 @@
 import { User } from "./User";
+import { Company } from "./Company";
+import { CustomMap } from "./CustomMap";
+// let user = new User();
+let company = new Company();
 
-let user = new User();
-
-console.log(user);
-
-console.log("Howdy, Partner");
+const map = new CustomMap("map", company.location.lat, company.location.lng);
