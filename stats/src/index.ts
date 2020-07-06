@@ -1,10 +1,14 @@
 import { MatchReader } from "./MatchReader";
+import {CsvFileReader} from "./CsvFileReader"
 import { MatchResult } from "./MatchResult";
 
-let reader = new MatchReader("football.csv");
-reader.read();
-let football = reader.data;
+const csvFileReader = new CsvFileReader('football.csv');
 
+const reader = new MatchReader(csvFileReader);
+reader.load();
+
+let football = reader.matches;
+console.log(football)
 enum Header {
   Date,
   HomeTeam,
